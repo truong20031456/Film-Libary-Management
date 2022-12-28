@@ -105,7 +105,7 @@ namespace assignment_22
 
         static bool checkAvailablefilm(List<Book> bookList, string cinemaNo, string filmNo, int checkIn, int checkOut)
         {
-            for (int i = 0; i < bookList.Count; i++)
+            for (int i = 0; i < bookList.Count; i++)    
             {
                 Book book = bookList[i];
                 if (book.CinemaNo.Equals(cinemaNo) && book.FilmTickets.Equals(filmNo) && (book.Bookingdates >= book.Bookingdates
@@ -168,16 +168,16 @@ namespace assignment_22
         }
         private static void Delete()
         {
-            Console.WriteLine("Enter hotel's ID:");
-            String hotelNo = Console.ReadLine();
+            Console.WriteLine("Enter Cinema's ID:");
+            String cinemaNo = Console.ReadLine();
             foreach (Cinema cinema in Filmlibrary.getInstance().CinemaList)
             {
-                if (cinema.No.Equals(hotelNo))
+                if (cinema.No.Equals(cinemaNo))
                 {
                     Filmlibrary.getInstance().CinemaList.Remove(cinema);
                     break;
                 }
-                Console.WriteLine("Hotel {0} was deleted!", hotelNo);
+                Console.WriteLine("cinema {0} was deleted!", cinemaNo);
             }
         }
     }
